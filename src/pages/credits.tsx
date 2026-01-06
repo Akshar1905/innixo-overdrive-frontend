@@ -11,7 +11,7 @@ const CONTRIBUTORS = [
         name: "Akshar Adgale",
         role: "Magazine Secretary",
         education: "B.Tech – Artificial Intelligence and Data Science",
-        phone: "+91 9359601020",
+        phone: "+91 9359601920",
         email: "akshar1905@gmail.com",
         image: aksharImg,
         socials: [
