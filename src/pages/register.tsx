@@ -78,7 +78,8 @@ export default function Register() {
 
     const mutation = useMutation({
         mutationFn: async (data: InsertRegistration) => {
-            const res = await apiRequest("POST", "/api/register", data);
+            const baseUrl = import.meta.env.VITE_API_BASE_URL || "";
+            const res = await apiRequest("POST", `${baseUrl}/api/register`, data);
             return res.json();
         },
         onSuccess: (data) => {
