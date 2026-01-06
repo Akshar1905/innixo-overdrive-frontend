@@ -1,0 +1,111 @@
+You are a senior UI/UX designer and motion graphics expert specializing in 
+cyberpunk, futuristic, and neon-tech interfaces.
+
+Design a complete website UI for a college technical event named 
+"INNIXO – OVERDRIVE 2026".
+
+THEME & VISUAL STYLE:
+• Cyberpunk / Neon Tech / Futuristic
+• Dark background (deep black / midnight blue)
+• Neon accent colors (electric cyan, neon purple, magenta, toxic green)
+• High contrast UI with glowing edges
+• Glassmorphism + subtle grain texture
+• Tech grid overlays and glitch effects
+• Modern rounded typography with sci-fi feel
+
+TYPOGRAPHY:
+• Headings: Orbitron / Oxanium / Space Grotesk
+• Body text: Inter / Poppins
+• Use uppercase headings with wide letter spacing
+• Neon text glow for important titles
+
+COLOR PALETTE:
+• Primary: #00F0FF (Neon Cyan)
+• Secondary: #8B5CF6 (Neon Purple)
+• Accent: #FF2E88 (Cyber Pink)
+• Background: #0A0A0F
+• Glass panels: rgba(255,255,255,0.08)
+
+MOTION & ANIMATIONS (VERY IMPORTANT):
+• Smooth page transitions (fade + slide)
+• Hero section with animated neon lines and moving grids
+• Hover animations on cards (glow + scale + tilt)
+• Micro-interactions on buttons (pulse, ripple, neon flash)
+• Scroll-triggered animations (text reveal, card lift)
+• Glitch animation on headings (subtle, not distracting)
+• Loading animation with cyber-style progress indicator
+• Floating particles or code fragments in background
+
+LAYOUT STRUCTURE:
+Design the following sections with strong visual hierarchy:
+
+1. HERO SECTION
+   - Full-screen cyberpunk hero
+   - Animated event title: "INNIXO – OVERDRIVE 2026"
+   - Subtitle: "Where Logic Meets Innovation"
+   - Floating CTA buttons:
+     • Register Now
+     • View Events
+   - Countdown timer with neon digits
+
+2. ABOUT SECTION
+   - Glassmorphism content card
+   - Animated icons for innovation, coding, esports
+   - Scroll-in text animation
+
+3. EVENT CATEGORIES
+   - Neon-bordered cards for:
+     • Tech Spark
+     • Code Combat
+     • Innovation Day
+   - Each card glows on hover with motion tilt
+
+4. EVENTS LISTING
+   - Day-wise tabs with animated underline
+   - Each event card includes:
+     • Icon
+     • Event name
+     • Entry fee
+     • Prize
+   - Hover reveals "Register" CTA
+
+5. HACKATHON SECTION
+   - Bold futuristic layout
+   - Timeline animation showing rounds
+   - Highlighted prize section with neon pulse
+
+6. ESPORTS SECTION
+   - Game cards with cyber-style overlays
+   - Animated hover effects
+   - Team-size badges with neon outlines
+
+7. SCHEDULE TIMELINE
+   - Vertical or horizontal neon timeline
+   - Animated dots and connecting lines
+
+8. SPONSORS SECTION
+   - Neon logo frames
+   - Floating hover glow
+   - Call-to-action for sponsorship
+
+9. CERTIFICATES & PRIZES
+   - Futuristic badge-style cards
+   - Animated trophy icons
+
+10. FOOTER
+    - Cyber grid background
+    - Social icons with glow animation
+    - Smooth hover transitions
+
+UX PRINCIPLES:
+• Mobile-first responsive design
+• Smooth scrolling
+• Clear CTA hierarchy
+• Fast load performance despite animations
+• Animations should feel premium, not noisy
+
+DELIVERABLE EXPECTATION:
+• Modern, funky cyberpunk UI
+• Motion-rich but readable
+• Event-focused, student-attractive
+• Ready for conversion into real website
