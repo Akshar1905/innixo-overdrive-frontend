@@ -22,19 +22,6 @@ const CONTRIBUTORS = [
         ]
     },
     {
-        name: "Allen Fernandez",
-        role: "Technical Secretary",
-        education: "B.Tech – Artificial Intelligence and Data Science",
-        phone: "+91 9054377338",
-        email: "fernandezallen234@gmail.com",
-        image: allenImg,
-        socials: [
-            { icon: Linkedin, href: "https://www.linkedin.com/in/allen-fernandez-14jun06", label: "LinkedIn" },
-            { icon: Github, href: "https://github.com/Allen1406", label: "GitHub" },
-            { icon: Instagram, href: "https://www.instagram.com/hehe__allen", label: "Instagram" }
-        ]
-    },
-    {
         name: "Raunak Raj",
         role: "Developer",
         education: "B.Tech – Artificial Intelligence and Data Science",
@@ -45,6 +32,19 @@ const CONTRIBUTORS = [
             { icon: Instagram, href: "https://www.instagram.com/r_raunakk?igsh=MTB1dDN2cXRiNXJlbA==", label: "Instagram" },
             { icon: Linkedin, href: "https://www.linkedin.com/in/raunak-raj-087b02315?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", label: "LinkedIn" },
             { icon: Github, href: "https://gitHub.com/rnk0-bit", label: "GitHub" }
+        ]
+    },
+    {
+        name: "Allen Fernandez",
+        role: "Technical Secretary",
+        education: "B.Tech – Artificial Intelligence and Data Science",
+        phone: "+91 9054377338",
+        email: "fernandezallen234@gmail.com",
+        image: allenImg,
+        socials: [
+            { icon: Linkedin, href: "https://www.linkedin.com/in/allen-fernandez-14jun06", label: "LinkedIn" },
+            { icon: Github, href: "https://github.com/Allen1406", label: "GitHub" },
+            { icon: Instagram, href: "https://www.instagram.com/hehe__allen", label: "Instagram" }
         ]
     }
 ];
