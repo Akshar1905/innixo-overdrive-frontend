@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 
 export function Schedule() {
   const schedule = [
-    { day: "Day 1 - Tech Spark", date: "Jan 28", events: ["Opening Ceremony", "Code Red (Escape Room)", "Paper Presentation", "Prompt Forge", "Overdrive UI"] },
-    { day: "Day 2 - Code Combat", date: "Jan 29", events: ["Debug Arena", "Code Sprint", "Esports: Squad Battles"] },
-    { day: "Day 3 - Innovation Day", date: "Jan 30", events: ["Overdrive Hack", "Valedictory Function", "Prize Distribution"] },
+    { day: "Day 1", date: "Feb 4", events: ["Opening Ceremony", "Debug Arena", "Code Sprint", "Code Red: Innixo Files", "Esports Bracket Start"] },
+    { day: "Day 2", date: "Feb 5", events: ["Overdrive Hack (Hybrid)", "Prompt Forge", "Esports: Semi-Finals"] },
+    { day: "Day 3", date: "Feb 6", events: ["Overdrive UI", "Paper Presentation", "Esports: Finals", "Prize Distribution"] },
   ];
 
   return (

@@ -43,8 +43,10 @@ export function Hackathon() {
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="p-4 bg-white/5 border border-white/10 rounded-lg">
                   <Trophy className="w-8 h-8 text-primary mb-2" />
-                  <div className="font-bold text-2xl text-white">TBA</div>
-                  <div className="text-xs text-gray-500 uppercase">Prize Pool</div>
+                  <div className="font-bold text-lg md:text-xl text-white">
+                    <span className="text-secondary">₹71,000</span> Pool
+                  </div>
+                  <div className="text-[10px] text-gray-400 font-mono">1st: 30k | 2nd: 15k | 3rd: 10k</div>
                 </div>
                 <div className="p-4 bg-white/5 border border-white/10 rounded-lg">
                   <Users className="w-8 h-8 text-secondary mb-2" />
@@ -53,7 +55,7 @@ export function Hackathon() {
                 </div>
               </div>
 
-              <Link href="/register?event=Hackathon">
+              <Link href="/register/overdrive-hack">
                 <NeonButton
                   variant="primary"
                 >

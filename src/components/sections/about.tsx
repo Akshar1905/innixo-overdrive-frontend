@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Cpu, Globe, Zap, Code, Shield } from "lucide-react";
 
+
+
 export function About() {
   const features = [
     {
@@ -22,6 +24,8 @@ export function About() {
 
   return (
     <section id="about" className="py-24 relative overflow-hidden">
+
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -35,8 +39,8 @@ export function About() {
               <span className="text-primary">EVENT</span>
             </h2>
             <p className="text-gray-400 font-poppins text-lg leading-relaxed mb-6">
-              INNIXO is not just a tech fest; it's a glimpse into the future. 
-              Overdrive 2026 brings together the brightest minds to compete, 
+              INNIXO is not just a tech fest; it's a glimpse into the future.
+              Overdrive 2026 brings together the brightest minds to compete,
               collaborate, and conquer across multiple domains of technology and gaming.
             </p>
             <p className="text-gray-400 font-poppins text-lg leading-relaxed">

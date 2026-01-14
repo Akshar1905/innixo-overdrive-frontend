@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Terminal } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -52,16 +52,31 @@ export function Navbar() {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="font-oxanium text-sm uppercase tracking-wider text-gray-400 hover:text-primary transition-colors relative group"
-            >
-              {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full" />
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isHome = useLocation()[0] === "/";
+            const href = isHome ? link.href : `/${link.href}`;
+            const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+              if (isHome) {
+                e.preventDefault();
+                const element = document.querySelector(link.href);
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth" });
+                }
+              }
+            };
+
+            return (
+              <a
+                key={link.name}
+                href={href}
+                onClick={handleClick}
+                className="font-oxanium text-sm uppercase tracking-wider text-gray-400 hover:text-primary transition-colors relative group cursor-pointer"
+              >
+                {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full" />
+              </a>
+            );
+          })}
           <Link href="/register">
             <NeonButton variant="accent" className="px-6 py-2 text-sm">
               Register
@@ -87,16 +102,35 @@ export function Navbar() {
             exit={{ opacity: 0, y: -20 }}
             className="absolute top-full left-0 right-0 bg-[#0A0A0F] border-b border-white/10 p-4 md:hidden flex flex-col gap-4"
           >
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="font-oxanium text-lg text-gray-300 hover:text-primary py-2 block"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const [location] = useLocation();
+              const isHome = location === "/";
+              const href = isHome ? link.href : `/${link.href}`;
+
+              const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+                if (isHome) {
+                  e.preventDefault();
+                  const element = document.querySelector(link.href);
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                    setMobileMenuOpen(false);
+                  }
+                } else {
+                  setMobileMenuOpen(false);
+                }
+              };
+
+              return (
+                <a
+                  key={link.name}
+                  href={href}
+                  className="font-oxanium text-lg text-gray-300 hover:text-primary py-2 block"
+                  onClick={handleClick}
+                >
+                  {link.name}
+                </a>
+              );
+            })}
             <Link href="/register">
               <NeonButton variant="accent" className="w-full">
                 Register Now

@@ -8,8 +8,8 @@ export function Hero() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    // Set event date to Jan 28, 2026
-    const eventDate = new Date("2026-01-28T09:00:00");
+    // Set event date to Feb 4, 2026
+    const eventDate = new Date("2026-02-04T09:00:00");
 
     const timer = setInterval(() => {
       const now = new Date();

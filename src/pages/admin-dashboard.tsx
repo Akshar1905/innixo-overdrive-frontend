@@ -15,13 +15,15 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Download } from "lucide-react";
+import { Download, Eye } from "lucide-react";
+import { RegistrationDetailsModal } from "@/components/admin/registration-details-modal";
 
 export default function AdminDashboard() {
     const [, setLocation] = useLocation();
     const [search, setSearch] = useState("");
     const [filterEvent, setFilterEvent] = useState("ALL");
     const [secret, setSecret] = useState("");
+    const [selectedRegistration, setSelectedRegistration] = useState<Registration | null>(null);
 
     useEffect(() => {
         const s = localStorage.getItem("admin-secret");
@@ -125,6 +127,7 @@ export default function AdminDashboard() {
                             <TableHead className="text-primary">Status</TableHead>
                             <TableHead className="text-primary">Payment</TableHead>
                             <TableHead className="text-primary text-right">Date</TableHead>
+                            <TableHead className="text-primary text-center">Actions</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -147,11 +150,27 @@ export default function AdminDashboard() {
                                 <TableCell className="text-right text-muted-foreground text-xs">
                                     {new Date(reg.createdAt).toLocaleDateString()}
                                 </TableCell>
+                                <TableCell className="text-center">
+                                    <Button
+                                        variant="ghost"
+                                        size="sm"
+                                        onClick={() => setSelectedRegistration(reg)}
+                                        className="hover:text-primary hover:bg-primary/10"
+                                    >
+                                        <Eye className="w-4 h-4" />
+                                    </Button>
+                                </TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
                 </Table>
             </div>
+
+            <RegistrationDetailsModal
+                isOpen={!!selectedRegistration}
+                onClose={() => setSelectedRegistration(null)}
+                registration={selectedRegistration}
+            />
         </div>
     );
 }
