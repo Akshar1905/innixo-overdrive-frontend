@@ -5,6 +5,7 @@ import { Link } from "wouter";
 import { NeonButton } from "@/components/ui/neon-button";
 import aksharImg from "@/assets/akshar.jpeg";
 import allenImg from "@/assets/alen.jpeg";
+import raunakImg from "@/assets/raunak.png";
 
 const CONTRIBUTORS = [
     {
@@ -31,6 +32,19 @@ const CONTRIBUTORS = [
             { icon: Linkedin, href: "https://www.linkedin.com/in/allen-fernandez-14jun06", label: "LinkedIn" },
             { icon: Github, href: "https://github.com/Allen1406", label: "GitHub" },
             { icon: Instagram, href: "https://www.instagram.com/hehe__allen", label: "Instagram" }
+        ]
+    },
+    {
+        name: "Raunak Raj",
+        role: "Developer",
+        education: "B.Tech – Artificial Intelligence and Data Science",
+        phone: "+91 7415225247",
+        email: "whyraunakk@gmail.com",
+        image: raunakImg,
+        socials: [
+            { icon: Instagram, href: "https://www.instagram.com/r_raunakk?igsh=MTB1dDN2cXRiNXJlbA==", label: "Instagram" },
+            { icon: Linkedin, href: "https://www.linkedin.com/in/raunak-raj-087b02315?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", label: "LinkedIn" },
+            { icon: Github, href: "https://gitHub.com/rnk0-bit", label: "GitHub" }
         ]
     }
 ];
