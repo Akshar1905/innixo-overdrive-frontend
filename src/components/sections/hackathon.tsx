@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { NeonButton } from "@/components/ui/neon-button";
-import hackathonBg from "@assets/generated_images/abstract_digital_code_background.png";
+import hackathonBg from "@assets/hackathon.jpeg";
 import { Clock, Code2, Users, Trophy } from "lucide-react";
 
 export function Hackathon() {
