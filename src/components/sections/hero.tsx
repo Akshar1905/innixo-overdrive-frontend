@@ -48,15 +48,15 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="mb-6"
         >
-          <span className="inline-block py-1 px-3 rounded-full border border-primary/30 bg-primary/10 text-primary font-oxanium tracking-widest text-sm mb-4">
+          <span className="inline-block py-1 px-3 rounded-full border border-primary/30 bg-primary/10 text-primary font-oxanium tracking-widest text-xs md:text-sm mb-4">
             Dr. D. Y. Patil School of Science and Technology, Pune
           </span>
-          <h1 className="font-orbitron font-black text-6xl md:text-8xl lg:text-9xl tracking-tighter text-white mb-2 relative">
+          <h1 className="font-orbitron font-black text-4xl sm:text-6xl md:text-8xl lg:text-9xl tracking-tighter text-white mb-2 relative">
             <span className="relative z-10">INNIXO</span>
             <span className="absolute -top-1 -left-1 text-primary/30 blur-sm z-0">INNIXO</span>
             <span className="absolute -bottom-1 -right-1 text-secondary/30 blur-sm z-0">INNIXO</span>
           </h1>
-          <h2 className="font-orbitron font-bold text-4xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary tracking-widest mt-2">
+          <h2 className="font-orbitron font-bold text-2xl sm:text-4xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary tracking-widest mt-2">
             OVERDRIVE
           </h2>
         </motion.div>
