@@ -37,7 +37,8 @@ export default function AdminDashboard() {
     const { data: registrations, isLoading, isError } = useQuery<Registration[]>({
         queryKey: ["/api/admin/registrations"],
         queryFn: async () => {
-            const res = await fetch("/api/admin/registrations", {
+            const baseUrl = import.meta.env.VITE_API_BASE_URL || "";
+            const res = await fetch(`${baseUrl}/api/admin/registrations`, {
                 headers: { "x-admin-secret": secret }
             });
             if (!res.ok) throw new Error("Unauthorized");
@@ -48,7 +49,8 @@ export default function AdminDashboard() {
 
     const handleExport = async () => {
         try {
-            const res = await fetch("/api/admin/export", {
+            const baseUrl = import.meta.env.VITE_API_BASE_URL || "";
+            const res = await fetch(`${baseUrl}/api/admin/export`, {
                 headers: { "x-admin-secret": secret }
             });
             if (!res.ok) throw new Error("Failed to export");
@@ -57,7 +59,7 @@ export default function AdminDashboard() {
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement("a");
             a.href = url;
-            a.download = "registrations.csv";
+            a.download = "registrations_full_export.csv";
             document.body.appendChild(a);
             a.click();
             a.remove();

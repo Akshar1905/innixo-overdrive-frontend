@@ -1,5 +1,21 @@
 import { QueryClient, QueryFunction } from "@tanstack/react-query";
 
+// Helper to get and validate the base URL
+function getApiBaseUrl() {
+  const url = import.meta.env.VITE_API_BASE_URL;
+  if (!url) {
+    // In development, might be acceptable to fallback or warn, 
+    // but for this specific fix we want STRICT enforcement as per verification plan.
+    // However, to avoid breaking local dev if env isn't set instantly, we can check import.meta.env.DEV
+    if (import.meta.env.DEV) {
+      console.warn("VITE_API_BASE_URL is missing in DEV. Using relative path fallback.");
+      return "";
+    }
+    throw new Error("CRITICAL: VITE_API_BASE_URL is missing. API calls will fail.");
+  }
+  return url;
+}
+
 async function throwIfResNotOk(res: Response) {
   if (!res.ok) {
     const text = (await res.text()) || res.statusText;
@@ -13,8 +29,13 @@ export async function apiRequest(
   data?: unknown | undefined,
 ): Promise<Response> {
   const headers: Record<string, string> = data ? { "Content-Type": "application/json" } : {};
-  const baseUrl = import.meta.env.VITE_API_BASE_URL || "";
+
+  const baseUrl = getApiBaseUrl();
+  // Ensure we don't double slash if url starts with / and baseUrl ends with /
+  // But typically baseUrl is "https://host.com" (no trailing slash) and url is "/api/..."
   const finalUrl = url.startsWith("http") ? url : `${baseUrl}${url}`;
+
+  console.log(`[API Request] ${method} ${finalUrl}`); // Debug Log
 
   const res = await fetch(finalUrl, {
     method,
@@ -33,7 +54,7 @@ export const getQueryFn: <T>(options: {
 }) => QueryFunction<T> =
   ({ on401: unauthorizedBehavior }) =>
     async ({ queryKey }) => {
-      const baseUrl = import.meta.env.VITE_API_BASE_URL || "";
+      const baseUrl = getApiBaseUrl();
       const path = queryKey.join("/");
       const url = path.startsWith("http") ? path : `${baseUrl}${path}`;
 

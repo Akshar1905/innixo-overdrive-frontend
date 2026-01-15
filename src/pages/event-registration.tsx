@@ -99,11 +99,11 @@ export default function EventRegistrationPage() {
         teamName: data.teamName || "",
         teamLeader: data.members[0].fullName,
         teamMembers: JSON.stringify(data.members), // Stringify for backend storage
-
-        // Extra fields usually handled by backend default or nullable
-        // status: "DRAFT",
       };
-      return apiRequest("POST", "/api/register", payload);
+
+      const baseUrl = import.meta.env.VITE_API_BASE_URL || "";
+      console.log(`[EventRegistration] Submitting to: ${baseUrl}/api/register`, payload);
+      return apiRequest("POST", `${baseUrl}/api/register`, payload);
     },
     onSuccess: (_, variables) => {
       // Show success modal instead of just toast

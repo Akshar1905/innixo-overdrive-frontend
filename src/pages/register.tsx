@@ -79,6 +79,7 @@ export default function Register() {
     const mutation = useMutation({
         mutationFn: async (data: InsertRegistration) => {
             const baseUrl = import.meta.env.VITE_API_BASE_URL || "";
+            // apiRequest handles double slash if any, but explicitly passing full URL is safer with current logic
             const res = await apiRequest("POST", `${baseUrl}/api/register`, data);
             return res.json();
         },

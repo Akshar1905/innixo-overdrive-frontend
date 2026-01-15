@@ -18,7 +18,8 @@ export default function AdminLogin() {
         localStorage.setItem("admin-secret", secret);
 
         // Test the secret by hitting the API
-        fetch("/api/admin/registrations", {
+        const baseUrl = import.meta.env.VITE_API_BASE_URL || "";
+        fetch(`${baseUrl}/api/admin/registrations`, {
             headers: { "x-admin-secret": secret }
         }).then(res => {
             if (res.ok) {
